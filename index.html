@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Một lá thư tay nhỏ, ấm áp và riêng tư."
+  />
+  <title>Một lá thư dành cho chị</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <!-- MÀN HÌNH PHONG THƯ -->
+    <section id="gateScreen" class="gate-screen" aria-labelledby="gateTitle">
+      <div class="ambient ambient-shuttle" aria-hidden="true">🏸</div>
+      <div class="ambient ambient-racket" aria-hidden="true">🏸</div>
+
+      <div class="gate-copy">
+        <p class="eyebrow">một lá thư nhỏ</p>
+        <h1 id="gateTitle">Gửi tới một người đặc biệt</h1>
+        <p class="gate-note">
+          Có vài điều em muốn nói với chị, theo cách chậm rãi hơn một tin nhắn.
+        </p>
+      </div>
+
+      <button
+        id="envelopeButton"
+        class="envelope-button"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="nameDialog"
+      >
+        <span class="envelope" aria-hidden="true">
+          <span class="envelope-back"></span>
+          <span class="envelope-paper">
+            <span class="paper-line"></span>
+            <span class="paper-line short"></span>
+          </span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="wax-seal">🏸</span><span class="envelope-recipient"></span>
+        </span>
+        <span class="tap-hint">Chạm để mở thư</span>
+      </button>
+
+
+    </section>
+
+    <!-- HỘP NHẬP TÊN -->
+    <dialog id="nameDialog" class="name-dialog" aria-labelledby="dialogTitle">
+      <form id="nameForm" method="dialog" novalidate>
+        <button
+          id="closeDialogButton"
+          class="dialog-close"
+          type="button"
+          aria-label="Đóng"
+        >
+          ×
+        </button>
+
+        <p class="dialog-icon" aria-hidden="true">✉</p>
+        <h2 id="dialogTitle">Lá thư này dành cho ai?</h2>
+        <p class="dialog-copy">
+          Nhập đầy đủ tên người nhận để mở lá thư.
+        </p>
+
+        <label for="recipientName">Tên người nhận</label>
+        <input
+          id="recipientName"
+          name="recipientName"
+          type="text"
+          autocomplete="off"
+          autocapitalize="words"
+          placeholder="Nhập họ và tên"
+          aria-describedby="nameError"
+          required
+        />
+
+        <p id="nameError" class="form-message" role="status" aria-live="polite"></p>
+
+        <button class="primary-button" type="submit">Mở lá thư</button>
+      </form>
+    </dialog>
+
+    <!-- NỘI DUNG LÁ THƯ -->
+    <section id="letterScreen" class="letter-screen" hidden>
+      <article class="letter-card" aria-labelledby="letterTitle">
+        <div class="letter-decoration top-left" aria-hidden="true">🏸</div>
+        <div class="letter-decoration top-right" aria-hidden="true">🏸</div>
+
+        <header class="letter-header">
+          <h2 id="letterTitle" tabindex="-1">Một lời thương</h2>
+          <div class="tiny-divider" aria-hidden="true">
+            <span></span>
+            <span>🏸</span>
+            <span></span>
+          </div>
+        </header>
+
+        <section class="letter-body" aria-label="Nội dung thư">
+          <div class="letter-pages" aria-label="Lá thư viết tay gồm ba trang">
+            <figure class="handwritten-letter" style="--page-paper: #ceae8d">
+              <a href="assets/letter-page-1.jpg" target="_blank" rel="noopener" aria-label="Mở ảnh trang thư thứ nhất ở kích thước đầy đủ">
+                <img id="letterImage" src="assets/letter-page-1.jpg" alt="Trang 1 của thư viết tay: Gửi chị Kiều Vi, lời mở đầu và cảm xúc từ khi gặp chị trên sân cầu" width="1457" height="2048" fetchpriority="high" />
+              </a>
+              <figcaption id="letterImageCaption">01 / 03</figcaption>
+            </figure>
+            <figure class="handwritten-letter" style="--page-paper: #dfbda6">
+              <a href="assets/letter-page-2.jpg" target="_blank" rel="noopener" aria-label="Mở ảnh trang thư thứ hai ở kích thước đầy đủ">
+                <img src="assets/letter-page-2.jpg" alt="Trang 2 của thư viết tay: mong muốn đồng hành và lời đề nghị từ từ tìm hiểu nhau" width="1517" height="2048" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>02 / 03</figcaption>
+            </figure>
+            <figure class="handwritten-letter" style="--page-paper: #d0ae99">
+              <a href="assets/letter-page-3.jpg" target="_blank" rel="noopener" aria-label="Mở ảnh trang thư thứ ba ở kích thước đầy đủ">
+                <img src="assets/letter-page-3.jpg" alt="Trang 3 của thư viết tay: tôn trọng lựa chọn của chị, lời tái bút và chữ ký Lương Thục Nhạc" width="1514" height="2048" loading="lazy" decoding="async" />
+              </a>
+              <figcaption>03 / 03</figcaption>
+            </figure>
+          </div>
+          <p class="letter-image-hint">Chạm vào từng trang để xem ảnh lớn hơn.</p>
+
+        </section>
+
+        <section id="chibiSection" class="chibi-section" aria-labelledby="chibiTitle">
+          <p class="eyebrow">Một chút can đảm</p>
+          <h3 id="chibiTitle">Một bước gần chị hơn.</h3>
+          <div id="chibiStage" class="chibi-stage" role="img" aria-label="Chibi nam bước từ trái sang phải đến chibi nữ, ngập ngừng, giấu hoa, rồi đưa hoa">
+            <div class="chibi-girl"><img src="assets/girl-matched.png" alt="" width="1151" height="1366" /></div>
+            <div id="chibiBoy" class="chibi-boy" data-pose="boy-walk-1">
+              <img id="boyFrame" src="assets/boy-walk-1.png" alt="" width="1122" height="1402" />
+            </div>
+          </div>
+          <p id="chibiStatus" class="chibi-status">Một bó hoa, thay lời em muốn nói.</p>
+          <button id="replayChibi" class="text-button" type="button">Xem lại khoảnh khắc</button>
+        </section>
+
+        <footer class="letter-footer">
+          <p>
+            <span aria-hidden="true">🏸</span>
+            Cảm ơn chị đã đọc đến đây.
+          </p>
+          <button id="backToEnvelope" class="text-button" type="button">
+            Gấp thư lại
+          </button>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
